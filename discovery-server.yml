@@ -1,4 +1,9 @@
+server:
+  port: 8761
+
 eureka:
+  client:
+    register-with-eureka: false
   instance:
     hostname: localhost
     preferIpAddress: true
@@ -12,4 +17,5 @@ eureka:
     registryFetchIntervalSeconds: 5
 logging:
   level:
-    com.netflix.discovery: 'ON'
+    com.netflix.discovery: 'DEBUG'
+
