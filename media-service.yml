@@ -4,3 +4,5 @@ server:
 spring:
     application:
         name: media-service
+        
+message: outra mensagem 2
