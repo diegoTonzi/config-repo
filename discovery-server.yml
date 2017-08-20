@@ -2,18 +2,5 @@ server:
   port: 8761
 
 eureka:
-  instance:
-    hostname: localhost
-    preferIpAddress: true
-    statusPageUrlPath: ${management.context-path}/info
-    healthCheckUrlPath: ${management.context-path}/health
   client:
     registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-    registryFetchIntervalSeconds: 5
-logging:
-  level:
-    com.netflix.discovery: 'DEBUG'
-
