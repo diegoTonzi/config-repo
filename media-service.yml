@@ -1,6 +1,38 @@
 server:
-    port: 9090
+  port: 8085
 
 spring:
-    application:
-        name: media-service
+  application:
+    name: media-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/questionnaire-media
+    rest:
+      return-body-on-create: true
+      return-body-on-update: true
+  http:
+    multipart:
+      enabled: true # Enable support of multi-part uploads.
+      file-size-threshold: -1 # Threshold after which files will be written to disk. Values can use the suffixed "MB" or "KB" to indicate a Megabyte or Kilobyte size.
+      max-file-size: -1 # Max file size. Values can use the suffixed "MB" or "KB" to indicate a Megabyte or Kilobyte size.
+      max-request-size: -1 # Max request size. Values can use the suffixed "MB" or "KB" to indicate a Megabyte or Kilobyte size.
+
+app:
+  rel:
+    stream: stream
+  upload:
+    dir: uploads
+  messages:
+    error:
+      file: error.file
+      store-file: error.store.file
+      resource-not-found: error.resource.not.found
+    validation:
+      file-name-not-empty: file.name.not.empty
+      file-extension-invalid: file.extension.invalid
+      param-not-readable: param.not.readable
+
+logging:
+  level:
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+    org.springframework.data.mongodb.repository.Query: DEBUG
