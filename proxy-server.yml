@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  http:
+    multipart:
+      enabled: true # Enable support of multi-part uploads.
+      file-size-threshold: -1 # Threshold after which files will be written to disk. Values can use the suffixed "MB" or "KB" to indicate a Megabyte or Kilobyte size.
+      max-file-size: -1 # Max file size. Values can use the suffixed "MB" or "KB" to indicate a Megabyte or Kilobyte size.
+      max-request-size: -1 # Max request size. Values can use the suffixed "MB" or "KB" to indicate a Megabyte or Kilobyte size.
+
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
