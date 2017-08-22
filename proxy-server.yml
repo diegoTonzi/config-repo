@@ -19,7 +19,7 @@ eureka:
     leaseExpirationDurationInSeconds: 3
     leaseRenewalIntervalInSeconds: 1
 ribbon:
-  ConnectTimeout: 3000
+  ConnectTimeout: 10000
   ReadTimeout: 60000
 hystrix:
   command:
