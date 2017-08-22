@@ -1,6 +1,16 @@
 server:
   port: 8085
-
+eureka:
+  client:
+    enabled: true
+    registerWithEureka: true
+    registryFetchIntervalSeconds: 3
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
+    leaseExpirationDurationInSeconds: 3
+    leaseRenewalIntervalInSeconds: 1
 spring:
   application:
     name: media-service
@@ -16,7 +26,6 @@ spring:
       file-size-threshold: -1 # Threshold after which files will be written to disk. Values can use the suffixed "MB" or "KB" to indicate a Megabyte or Kilobyte size.
       max-file-size: -1 # Max file size. Values can use the suffixed "MB" or "KB" to indicate a Megabyte or Kilobyte size.
       max-request-size: -1 # Max request size. Values can use the suffixed "MB" or "KB" to indicate a Megabyte or Kilobyte size.
-
 app:
   rel:
     stream: stream
@@ -31,7 +40,6 @@ app:
       file-name-not-empty: file.name.not.empty
       file-extension-invalid: file.extension.invalid
       param-not-readable: param.not.readable
-
 logging:
   level:
     org.springframework.data.mongodb.core.MongoTemplate: DEBUG
